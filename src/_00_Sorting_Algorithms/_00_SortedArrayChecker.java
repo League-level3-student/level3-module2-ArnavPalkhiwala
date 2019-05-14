@@ -1,33 +1,74 @@
 package _00_Sorting_Algorithms;
 
 public class _00_SortedArrayChecker {
-	//1. Write a static method called intArraySorted. 
-	//   This method takes in an array of integers
-	//   and it returns a boolean.
-	//   The method returns true if the integer
-	//   array is in ascending order and false otherwise
+	// 1. Write a static method called intArraySorted.
+	// This method takes in an array of integers
+	// and it returns a boolean.
+	// The method returns true if the integer
+	// array is in ascending order and false otherwise
 
+	static boolean intArraySorted(int[] array) {
+		for (int i = 1; i < array.length; i++) {
+
+			int x = i;
+			int y = i - 1;
+
+			if (y > x) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+// 2. Write a static method called doubleArraySorted.
+// This method takes in an array of doubles
+// and it returns a boolean.
+// The method returns true if the double
+// array is in ascending order and false otherwise
+
+	static boolean doubleArraySorted(double[] doubleArray) {
+
+		for (int i = 1; i < doubleArray.length; i++) {
+
+			int x = i;
+			int y = i - 1;
+
+			if (y > x) {
+				return false;
+			}
+		}
+		return true;
+
+	}
+
+
+
+// 3. Write a static method called charArraySorted.
+// This method takes in an array of characters
+// and it returns a boolean.
+// The method returns true if the character
+// array is in alphabetical order and false otherwise
+// (You can compare characters just like integers)
+
+static boolean charArraySorted(char[] arrayChar) {
 	
-	//2. Write a static method called doubleArraySorted. 
-	//   This method takes in an array of doubles
-	//   and it returns a boolean.
-	//   The method returns true if the double
-	//   array is in ascending order and false otherwise
+		for (int i = 1; i < arrayChar.length; i++) {
 
-	
-	//3. Write a static method called charArraySorted. 
-	//   This method takes in an array of characters
-	//   and it returns a boolean.
-	//   The method returns true if the character
-	//   array is in alphabetical order and false otherwise
-	//   (You can compare characters just like integers)
+//			char x = i;
+//			char y = i - 1;
 
-	
-	//4. Write a static method called stringArraySorted. 
-	//   This method takes in an array of Strings
-	//   and it returns a boolean.
-	//   The method returns true if the String
-	//   array is in alphabetical order and false otherwise
-	//   (Use the compareTo(String) method)
-
+//			if (y > x) {
+				return false;
+			}
+//		}
+		return true;
 }
+	
+}
+
+// 4. Write a static method called stringArraySorted.
+// This method takes in an array of Strings
+// and it returns a boolean.
+// The method returns true if the String
+// array is in alphabetical order and false otherwise
+// (Use the compareTo(String) method)
