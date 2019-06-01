@@ -26,12 +26,10 @@ class _01_SwappingDigits {
 	// swapped
 	public static void swapArrayOfTwo(int[] arr) {
 
-			int y;
-			int a = arr[0];
-			int b = arr[1];
-			y = a;
-			a = b;
-			b = y;
+			int j = arr[0];
+			arr[0] = arr[1];
+			arr[1] = j;
+			
 
 
 	}
@@ -43,18 +41,18 @@ class _01_SwappingDigits {
 
 		boolean swap = true;
 		while (swap) {
-
 			swap = false;
+
+			
 			for (int i = 1; i < arr.length; i++) {
 
 				if (arr[i - 1] > arr[i]) {
 
-					int x = 0;
-					int a = arr[i];
-					int b = arr[i - 1];
-					x = a;
-					a = b;
-					b = x;
+					int x = arr[i-1];
+					arr[i-1] = arr[i];
+					arr[i] = x;
+					swap = true;
+					
 
 				}
 
