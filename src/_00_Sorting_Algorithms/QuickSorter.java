@@ -13,8 +13,8 @@ public class QuickSorter extends Sorter {
 	@Override
 	void sort(int[] array, SortingVisualizer display) {
 		// 10. call the quickSort method with 0 and the length of the array minus one
-		
-		quickSort(array, 0, array.length-1, display);
+
+		quickSort(array, 0, array.length - 1, display);
 	}
 
 	private void quickSort(int[] array, int low, int high, SortingVisualizer display) {
@@ -28,6 +28,7 @@ public class QuickSorter extends Sorter {
 		// in the array that is the halfway point between low and high
 
 		int pivot = array[(low + high) / 2];
+		display.updateDisplay();
 
 		// 4. make a while loop that goes while i is less than or equal to j
 
@@ -43,7 +44,7 @@ public class QuickSorter extends Sorter {
 			// 6. make a while loop that decrements j while
 			// the array element at j is greater than pivot
 
-			while (j > pivot) {
+			while (array[j] > pivot) {
 				j--;
 
 			}
@@ -54,19 +55,36 @@ public class QuickSorter extends Sorter {
 			// and decrease j by 1.
 
 			if (i <= j) {
-				int y = i;
-				i = j;
-				j = y;
+				int y = array[i];
+				array[i] = array[j];
+				array[j] = y;
+				
 				i = i + 1;
 				j = j - 1;
 
 			}
 
-			// 8. if low is less than j, call the quickSort method using
-			// low for the low and j for the high
+			display.updateDisplay();
 
-			// 9. if i is less than high, call the quickSort method using
-			// i for the low and high for the high.
 		}
+
+		// 8. if low is less than j, call the quickSort method using
+		// low for the low and j for the high
+
+		if (low < j) {
+
+			quickSort(array, low, j, display);
+		}
+
+		// 9. if i is less than high, call the quickSort method using
+		// i for the low and high for the high.
+
+		if (i < high) {
+
+			quickSort(array, i, high, display);
+
+		}
+
+		display.updateDisplay();
 	}
 }
