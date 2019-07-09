@@ -78,31 +78,66 @@ public class Algorithms {
 		}
 		return false;
 	}
-//
-//	public static List<String> sortScores(List<Double> results) {
-//		// TODO Auto-generated method stub
-//
-//		boolean inOrder = false;
-//		while (inOrder = false) {
-//
-//			for (int i = 0; i < results.size() - 1; i++) {
-//
-//				if (results.get(i) > results.get(i + 1)) {
-//
-//					double x = results.get(i);
-//					double z = results.get(i + 1);
-//					double y = x;
-//					x = z;
-//					z = y;
-//
-//				}
-//
-//			}
-//
-//		}
-//
-//		inOrder = true;
-//
-////		return sortScores;
-//	}
+
+	public static List<Double> sortScores(List<Double> results) {
+		// TODO Auto-generated method stub
+
+		boolean inOrder = true;
+		while (inOrder) {
+
+			inOrder = false; 
+			
+			for (int i = 0; i < results.size() - 1; i++) {
+
+				if (results.get(i) > results.get(i + 1)) {
+
+					double x = results.get(i);
+					double z = results.get(i + 1);
+					double y = x;
+					x = z;
+					z = y;
+
+					inOrder = true;
+
+				}
+
+			}
+
+		}
+
+		return results;
+	}
+
+	public static Object sortDNA(List<String> unsortedSequences) {
+		// TODO Auto-generated method stub
+
+		boolean inOrder = true;
+
+		while (inOrder) {
+			
+			inOrder = false;
+
+			for (int i = 0; i < unsortedSequences.size() -1; i++) {
+
+				if (unsortedSequences.get(i).length() > unsortedSequences.get(i+1).length()) {
+					
+					String x = unsortedSequences.get(i);
+					String temp = unsortedSequences.get(i);
+					unsortedSequences.set(i, unsortedSequences.get(i));
+					unsortedSequences.set(i + 1, unsortedSequences.get(i + 1));
+					
+//					String x = unsortedSequences.get(i);
+//					String temp = unsortedSequences.get(i);
+//					String other = unsortedSequences.get(i+1);
+//					unsortedSequences.set(i, temp);
+//					unsortedSequences.set(i + 1, other);
+					
+					inOrder = true;
+				}
+
+			}
+		}
+
+		return unsortedSequences;
+	}
 }
