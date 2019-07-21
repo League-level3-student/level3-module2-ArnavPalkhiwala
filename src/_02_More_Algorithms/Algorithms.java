@@ -85,8 +85,8 @@ public class Algorithms {
 		boolean inOrder = true;
 		while (inOrder) {
 
-			inOrder = false; 
-			
+			inOrder = false;
+
 			for (int i = 0; i < results.size() - 1; i++) {
 
 				if (results.get(i) > results.get(i + 1)) {
@@ -111,33 +111,56 @@ public class Algorithms {
 	public static Object sortDNA(List<String> unsortedSequences) {
 		// TODO Auto-generated method stub
 
-		boolean inOrder = true;
+		boolean hasSwapped = true;
 
-		while (inOrder) {
-			
-			inOrder = false;
+		while (hasSwapped) {
 
-			for (int i = 0; i < unsortedSequences.size() -1; i++) {
+			hasSwapped = false;
 
-				if (unsortedSequences.get(i).length() > unsortedSequences.get(i+1).length()) {
-					
+			for (int i = 0; i < unsortedSequences.size() - 1; i++) {
+
+				if (unsortedSequences.get(i).length() > unsortedSequences.get(i + 1).length()) {
+
 					String x = unsortedSequences.get(i);
-					String temp = unsortedSequences.get(i);
-					unsortedSequences.set(i, unsortedSequences.get(i));
-					unsortedSequences.set(i + 1, unsortedSequences.get(i + 1));
-					
-//					String x = unsortedSequences.get(i);
-//					String temp = unsortedSequences.get(i);
-//					String other = unsortedSequences.get(i+1);
-//					unsortedSequences.set(i, temp);
-//					unsortedSequences.set(i + 1, other);
-					
-					inOrder = true;
+					String temp = unsortedSequences.get(i + 1);
+					unsortedSequences.set(i, temp);
+					unsortedSequences.set(i + 1, x);
+
+					hasSwapped = true;
 				}
 
 			}
 		}
 
 		return unsortedSequences;
+	}
+
+	public static List<String> sortWords(List<String> words) {
+		// TODO Auto-generated method stub
+
+		boolean inAlphabeticalOrder = true;
+
+		while (inAlphabeticalOrder) {
+			
+			inAlphabeticalOrder = false;
+
+			for (int i = 0; i < words.size() - 1; i++) {
+
+				if (words.get(i).compareTo(words.get(i + 1)) > 0) {
+
+					String x = words.get(i);
+					String temp = words.get(i + 1);
+					words.set(i, temp);
+					words.set(i + 1, x);
+
+					inAlphabeticalOrder = true;
+
+				}
+
+			}
+
+		}
+
+		return words;
 	}
 }
